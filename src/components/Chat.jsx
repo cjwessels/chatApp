@@ -1,14 +1,16 @@
+import { sendEmailVerification } from "firebase/auth";
 import {
   collection,
   onSnapshot,
   orderBy,
   query,
-  QuerySnapshot,
+  // QuerySnapshot,
 } from "firebase/firestore";
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../firebase";
 
 import ChatMessage from "./ChatMessage";
+import SendMessage from "./SendMessage";
 
 const style = {
   main: `flex flex-col p-[10px] relative`,
@@ -20,9 +22,9 @@ const Chat = () => {
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("timestamp"));
-    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
-      QuerySnapshot.forEach((doc) => {
+      querySnapshot.forEach((doc) => {
         messages.push({ ...doc.data(), id: doc.id });
       });
       setMessages(messages);
@@ -38,6 +40,7 @@ const Chat = () => {
             <ChatMessage key={message.id} message={message} />
           ))}
       </main>
+      <SendMess
       <span ref={scroll}></span>
     </>
   );
