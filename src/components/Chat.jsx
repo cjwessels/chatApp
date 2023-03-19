@@ -40,7 +40,7 @@ const Chat = () => {
             <ChatMessage key={message.id} message={message} />
           ))}
       </main>
-      <SendMess
+      <SendMessage scroll={scroll} />
       <span ref={scroll}></span>
     </>
   );

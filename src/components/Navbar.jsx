@@ -7,7 +7,7 @@ import SignIn from "./SignIn";
 import LogOut from "./LogOut";
 
 const style = {
-  nav: `bg-gray-800 h-20 flex justify-between items-center p-4 rounded-t-[10px] overflow-hidden`,
+  nav: `bg-gray-900 h-20 flex justify-between items-center p-4 rounded-t-[10px] overflow-hidden`,
   heading: `text-white text-3xl`,
 };
 

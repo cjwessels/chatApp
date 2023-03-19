@@ -580,6 +580,14 @@ video {
   height: 90vh;
 }
 
+.h-\[1200vh\] {
+  height: 1200vh;
+}
+
+.h-\[10vh\] {
+  height: 10vh;
+}
+
 .max-w-\[728px\] {
   max-width: 728px;
 }
