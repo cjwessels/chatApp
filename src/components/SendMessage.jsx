@@ -21,8 +21,8 @@ const SendMessage = ({ scroll }) => {
     await addDoc(collection(db, "messages"), {
       text: input,
       name: displayName,
-      uid,
-      timestamp: serverTimestamp,
+      uid: uid,
+      timestamp: serverTimestamp(),
     });
 
     setInput("");
